@@ -47,6 +47,8 @@
       * Add downloaded songs in Playlists also.
       * Add Seek in Music palyer.
       * Improvement in Music Albums.
+# Current Look
+      ![alt text](image.png)
 
 
 ###### You can report any other issues also.
