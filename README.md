@@ -48,7 +48,7 @@
       * Add Seek in Music palyer.
       * Improvement in Music Albums.
 # Current Look
-      ![alt text](image.png)
+      ![alt text](Image.png)
 
 
 ###### You can report any other issues also.
