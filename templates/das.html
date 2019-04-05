@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<hr>
+<table class="table table-stripped table-hover">
+	<tr>
+		<th>PLAYLIST NAME</th>
+		<th></th>
+	</tr>
+	{% for song in songs %}
+	<tr>
+		<td><a href="/play_playlist/{{song.id}}"  class="btn btn-default">{{song.title}}</a></td>
+		<td></td>
+		<td><a href="/play_playlist/{{song.id}}" class="btn btn-default pull-right">PLAY</a></td>
+		<td></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

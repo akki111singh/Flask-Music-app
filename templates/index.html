@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block body %}
+<style>
+body {
+   margin: 0;
+}
+#index-jumbotron {
+    background-image: url(static/images/banner.jpg);
+    background-size: cover;
+    padding-bottom: 46.128%; /* <- This value should be equal to height / width */
+}
+</style>
+<div class="jumbotran text-center">
+	<h1>Welcome to music app</h1>
+	<p class="lead"> The true beauty of music is that it connects people. It carries a message, and we, the musicians, are the messengers.</p>
+	{% if session.logged_in==NULL %}
+	<a href="/register" class="btn btn-primary btn-lg">REGISTER</a>
+	<a href="/login" class="btn btn-primary btn-lg">LOGIN</a>
+	{% endif %}
+</div>
+<div id="index-jumbotron"></div>
+{% endblock %}

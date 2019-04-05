@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1>Welcome {{session.username}} </h1>
+
+<div class="container">
+  <a href="/create_playlist" class="btn btn-info" role="button">Create public playlist</a>
+  <a href="/create_private_playlist" class="btn btn-info" role="button">Create private playlist</a>
+</div>
+<hr>
+<table class="table table-stripped table-hover">
+	<tr>
+		<th>PLAYLIST NAME</th>
+		<th></th>
+	</tr>
+	{% for song in songs %}
+	<tr>
+		<td><a href="play_playlist/{{song.id}}"  class="btn btn-default">{{song.title}}</a></td>
+
+		<td></td>
+		<td><a href="play_playlist/{{song.id}}" class="btn btn-default pull-right">PLAY</a></td>
+		<td><a href="/Albums" class="btn btn-danger pull-right ">Add</a></td>
+		<td><a href="delete_playlist/{{song.id}}" class="btn btn-default pull-right">DELETE</a></td>
+		<td></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

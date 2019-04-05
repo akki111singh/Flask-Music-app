@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Music Player</title>
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<audio id="audio">
+<source id="shit" src="{{albu[0]["path"]}}">
+</audio>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <button class="q" onclick="update()">Anything</button>
+  <button class="q" onclick="#"></button>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<div class="audio-player">
+        <div class="cover-art">
+          <img src="static/images/demo/gallery/search.jpg" style='width:100%;' border="0" alt="Null">
+
+        </div>
+        <div class="info">
+            <h3 id="name">{{albu[0]['song_name']}}</h3>
+            <p id="timeleft">00:00</p>
+            <p id="s_id">{{albu[0]['id']}}</p>
+            <div class="progressbar_slide">
+                <div class="progressbar_range"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="controls_plays">
+                <svg id="prev_btn" viewBox="0 0 24.5 23.6" onclick="prev()">
+                    <polygon points="0,11.8 13.5,0 13.5,10.7 24.5,0 24.5,23.6 13.5,12.9 13.5,23.6 "/>
+                </svg>
+                <svg id="plays_btn" viewBox="0 0 24.5 30.9">
+                    <g id="play_btn">
+                        <path d="M0,30.9L0,0l24.5,15.4L0,30.9z"/>
+                    </g>
+                    <g id="pause_btn">
+                        <rect x="0" y="0" width="8.2" height="30.9"/>
+                        <rect x="16.2" y="0" width="8.2" height="30.9"/>
+                    </g>
+                </svg>
+                <svg id="next_btn" viewBox="0 0 24.5 23.6" onclick="next()">
+                    <polygon points="25,11.8 11.5,0 11.5,10.7 0.5,0 0.5,23.6 11.5,12.9 11.5,23.6 "/>
+                </svg>
+            </div>
+            <div class="controls_player">
+                <svg id="shuffle_btn" viewBox="0 0 23 23" onclick="reset()">
+                    <path d="M7.3,6l0.4,2.8l3.6-5l-5-3.6l0.5,3C3.6,4.4,1.1,7.4,1.1,11c0,4.4,2.4,8,7.4,8.3v-2.7
+                                c-3-0.3-4.7-2.7-4.7-5.6C3.8,8.8,5.5,7,7.3,6z"/>
+                    <path d="M21.5,11c0-4.4-4-8-8-8.3v2.7c2,0.3,5.2,2.7,5.2,5.6c0,2.2-1.2,4-3,5l-0.4-2.8l-3.6,5l5,3.6l-0.6-3
+                                C19.4,17.6,21.5,14.6,21.5,11z"/>
+                </svg>
+
+                <div class="dropdown">
+                <button onclick="myFunction()"class="dropbtn">+</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    {% if song==0 %}
+                    <a href="/create_playlist">Create new Playlist</a>
+                    {% else %}
+                    {% for i in songs %}
+                    <input onclick="change('{{i.title}}')" type="button" value="{{i.title}}" id="{{i.title}}">
+                    {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+
+                <script>
+                var str=""
+                var str1=""
+                var str2=""
+                var presses=""
+                var x=""
+                  function change(x) {
+                            console.log(x);
+                            str='/save_playlist/'+document.getElementById(x).value;
+                            str1=str+'/'+document.getElementById("s_id").innerHTML;
+                            window.open(str1,"_self");
+                  }
+                </script>
+            </div>
+        </div>
+    </div>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+
+    var song =1;
+    var songid={{albu[0]["id"]}};
+    function update1(){
+        song=1;
+        songid={{albu[0]["id"]}};
+        $("#play_btn").hide();
+        $("#pause_btn").show();
+        document.getElementById('shit').src="{{albu[0]["path"]}}";
+        document.getElementById("audio").load();
+        document.getElementById("audio").play();
+        document.getElementById("s_id").innerHTML=songid;
+        document.getElementById('name').innerHTML="Anything";
+    }                function next(){
+                      if(song+1===2) song=1;
+                      $("#play_btn").hide();
+                      $("#pause_btn").show();
+                      console.log(song);
+                      update="update"+song+"()";
+                      eval(update);
+                    }
+                    function prev(){
+                      if(song-1===0) song=1;
+                      console.log(song);
+                      update="update"+song+"()";
+                      eval(update);
+                    }
+                    function reset(){
+                      update="update"+song+"()";
+                      eval(update);
+                      document.getElementById("audio").pause();
+                      $("#play_btn").show();
+                      $("#pause_btn").hide();
+                    }
+
+                    function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}       </script>
+        <script  src="/static/index.js"></script>
+        <script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function addinplaylist()
+{
+      cur=mysql.connection.cursor()
+      cur.execute("SELECT * FROM songs_list WHERE album LIKE 'Jus%'")
+      albu7=cur.fetchall()
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+
+}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+</script>
+</body>
+</html>

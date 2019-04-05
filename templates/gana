@@ -1,0 +1,28 @@
+@app.route('/new',methods=['POST'])
+def new():
+	co=request.form['give']
+	song_name=co+'.mp3'
+	print(song_name)
+	cur=mysql.connection.cursor()
+	result=cur.execute("SELECT * FROM songs_list WHERE song_name=%s",[song_name])
+	albu69=cur.fetchall()
+	if result>0:
+		return render_template('search.html',albu=albu69)
+	else:
+		try:
+		    page = requests.get("https://www.youtube.com/results?search_query="+song)
+		    soup = BeautifulSoup(page.text,'html.parser')
+		    for div in soup.find_all('div', { "class" : "yt-lockup-video" }):
+		        if div.get("data-context-item-id") != None:
+		            video_id = div.get("data-context-item-id")
+		            break
+
+		    	os.system('youtube-dl -x --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s" https://www.youtube.com/watch?v='+video_id)
+
+		    os.system("mv *.mp3 ./static/music/")
+			cur=mysql.connection.cursor()
+			cur.execute("INSERT INTO ")
+		except NameError:
+		    	flash('Song Not Found','success')
+		    	return render_template('')
+h

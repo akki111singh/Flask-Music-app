@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+body {
+  font-family: 'Roboto', sans-serif;
+  background: background1.jpg;
+  overflow: hidden;
+}
+
+.audio-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: all 0.2s;
+  width: 90vw;
+  max-width: 700px;
+  box-sizing: border-box;
+}
+.btn-group button {
+  background-color: #4CAF50;
+  border: 1px solid green;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  width: 20%;
+  display: block;
+
+}
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height:100%;
+    width: 0;
+    position:fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x:hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.q {
+    background-color:#111;
+    color:white;
+    border: 2px solid green;
+    padding: 24px 35px;
+    margin : 4px 2px;
+    font-size: 16px;
+    border: none;
+  }
+  .qq {
+    background-color:#111;
+    color:white;
+    border: 1px solid green;
+    padding: 12px 17px;
+    margin : 2px 1px;
+    font-size: 10px;
+    border: none;
+  }
+.idenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.dropbtn {
+    background-color:rgb(57, 191, 122);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border:none;
+    border-radius:550px;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: rgb(64, 166, 114);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#fuck{
+  margin-top: 5%;
+}
+.btn-group button:not(:last-child) {
+  border-bottom: none;
+}
+.btn-group button:hover {
+  background-color:white;
+}
+@media screen and (max-width: 560px) {
+  .audio-player {
+    width: 90vw;
+    background: white;
+  }
+}
+
+.info {
+  flex: 1;
+  padding: 16px 30px;
+}
+
+.cover-art {
+  position: absolute;
+  bottom: 160px;
+  right: -30px;
+  width: 230px;
+  height: 230px;
+  background-image: url('Cover.jpg');
+  background-size: cover;
+  transition: all 0.2s;
+}
+@media screen and (max-width: 560px) {
+  .cover-art {
+    position: relative;
+    width: 100%;
+    height: 80vw;
+    bottom: inherit;
+    right: inherit;
+  }
+}
+@media screen and (max-width: 520px) {
+  .cover-art {
+    position: relative;
+    width: 100%;
+    height: 90vw;
+    bottom: inherit;
+    right: inherit;
+  }
+}
+@media screen and (max-height: 500px) {
+  .cover-art {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+}
+.cover-art a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.cover-art a:hover {
+  background: #22a952;
+  opacity: 0.2;
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin-top: -1px;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+.controls_plays {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+}
+.controls_player {
+  flex: 1;
+  fill: #7FE5A3;
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 420px) {
+  .controls {
+    flex-direction: column;
+    height: 200px;
+  }
+}
+
+#plays_btn, #prev_btn, #next_btn {
+  cursor: pointer;
+  width: 26px;
+  max-width: 18px;
+  transition: all 0.2s;
+}
+#plays_btn:hover, #prev_btn:hover, #next_btn:hover {
+  fill: #565349;
+}
+
+#pause_btn {
+  display: none;
+}
+
+#volume_btn, #shuffle_btn, #playlist_btn {
+  cursor: pointer;
+  width: 23px;
+  max-width: 18px;
+  transition: all 0.2s;
+}
+#volume_btn:hover, #shuffle_btn:hover, #playlist_btn:hover {
+  fill: #22a952;
+}
+
+.progressbar_slide {
+  width: 100%;
+  background: #7fe5a3;
+  height: 6px;
+}
+
+.progressbar_range {
+  width: 0;
+  background: black;
+  height: 6px;
+}

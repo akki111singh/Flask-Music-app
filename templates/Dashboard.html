@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="jumbotran text-center">
+<h1>USERS</h1>
+</div>
+<ul class="list-group">
+{% for play in songs %}
+<li class="list-group-item"><a href="users/playlist/{{play.id}}">{{play.username}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,364 @@
+@charset "utf-8";
+/*
+Template Name: Merciano
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Layout CSS
+*/
+
+@import url("fontawesome-4.6.2.min.css");
+@import url("framework.css");
+
+/* Rows
+--------------------------------------------------------------------------------------------------------------- */
+.row0, .row0 a{}
+.row1, .row1 a{}
+.row2, .row2 a{}
+.row3, .row3 a{}
+.row4, .row4 a{}
+.row5, .row5 a{}
+
+
+/* Page Intro
+--------------------------------------------------------------------------------------------------------------- */
+#pageintro{padding:200px 0; border-bottom:1px solid;}
+
+#pageintro article{text-align:center;}
+#pageintro article p{font-size:16px;}
+#pageintro article .heading{font-size:32px; text-transform:uppercase;}/* Override default settings */
+#pageintro article footer{margin-top:50px;}
+
+
+/* Header
+--------------------------------------------------------------------------------------------------------------- */
+#header{}
+
+#header #logo{margin:30px 0 0 0;}
+#header #logo h1{margin:0; padding:0; font-size:22px; text-transform:uppercase;}
+
+
+/* Content Area
+--------------------------------------------------------------------------------------------------------------- */
+.container{padding:80px 0;}
+
+/* Content */
+.container .content{}
+
+.services{margin-bottom:50px;}
+.services li{text-align:center;}
+.services li:nth-child(-n+4){margin-bottom:30px;}/* Adds bottom margin to the first four elements */
+.services li:last-child{margin-bottom:0;}/* Required when elements stack in smaller viewports */
+.services li figure{display:inline-block; position:relative; max-width:100%; border-bottom:1px solid;}
+.services li figure figcaption{display:block; position:absolute; bottom:0; left:0; width:100%; padding:8px; line-height:1;}
+.services li figure:hover figcaption{opacity:0;}
+
+.testimonial{margin-bottom:50px;}
+.testimonial blockquote{display:block; position:relative; width:100%; margin:0 0 30px 0; padding:30px; line-height:1.4; border:solid; border-width:0 0 1px 0; text-align:center; z-index:1;}
+.testimonial blockquote::before{display:none;}
+.testimonial blockquote::after{display:block; position:absolute; bottom:0; left:50%; margin:0 0 -18px -18px; content:""; border:solid; border-width:18px 18px 0 18px;}
+.testimonial figure{text-align:center;}
+.testimonial figure img{margin-bottom:15px;}
+.testimonial figure figcaption{}
+.testimonial figure figcaption *{display:block; margin:0; padding:0; line-height:1;}
+.testimonial figure figcaption strong{margin-bottom:5px;}
+.testimonial figure figcaption br{display:none;}
+.testimonial figure figcaption em{font-size:.8rem;}
+
+.latest{}
+.latest > article:first-child{margin-bottom:80px;}
+.latest article{}
+.latest article > div:nth-of-type(2){margin-bottom:0;}/* Used when elements stack in small viewports */
+.latest article .heading{margin:20px 0 10px;}
+.latest article .meta{font-size:.8rem;}
+.latest article .meta li{display:inline-block;}
+.latest article .meta > li:first-child{margin-right:15px;}
+.latest article p, .latest article footer{margin-bottom:30px;}
+
+.gmap{display:block; position:relative; width:100%; height:350px;}/* Height (min or max-height don't work) has to be defined, otherwise the map wont be shown */
+.gmap #gmapcanvas{width:100%; height:100%;}
+.gmap #gmapcanvas img[src*="gstatic.com/"], #gmapcanvas img[src*="googleapis.com/"]{width:auto; max-width:none; height:auto;}
+
+/* Comments */
+#comments ul{margin:0 0 40px 0; padding:0; list-style:none;}
+#comments li{margin:0 0 10px 0; padding:15px;}
+#comments .avatar{float:right; margin:0 0 10px 10px; padding:3px; border:1px solid;}
+#comments address{font-weight:bold;}
+#comments time{font-size:smaller;}
+#comments .comcont{display:block; margin:0; padding:0;}
+#comments .comcont p{margin:10px 5px 10px 0; padding:0;}
+
+#comments form{display:block; width:100%;}
+#comments input, #comments textarea{width:100%; padding:10px; border:1px solid;}
+#comments textarea{overflow:auto;}
+#comments div{margin-bottom:15px;}
+#comments input[type="submit"], #comments input[type="reset"]{display:inline-block; width:auto; min-width:150px; margin:0; padding:8px 5px; cursor:pointer;}
+
+/* Sidebar */
+.container .sidebar{}
+
+.sidebar .sdb_holder{margin-bottom:50px;}
+.sidebar .sdb_holder:last-child{margin-bottom:0;}
+
+
+/* Footer
+--------------------------------------------------------------------------------------------------------------- */
+#footer{padding:80px 0;}
+
+#footer .title{margin:0 0 30px 0; padding:0 0 8px 0; border-bottom:1px solid; font-size:1.2rem;}
+
+#footer .linklist li{margin-bottom:10px;}
+#footer .linklist li:last-child{margin-bottom:0;}
+
+#footer .font-xs{margin:0;}
+
+
+/* Copyright
+--------------------------------------------------------------------------------------------------------------- */
+#copyright{padding:20px 0;}
+#copyright *{margin:0; padding:0;}
+
+
+/* Transition Fade
+--------------------------------------------------------------------------------------------------------------- */
+*, *::before, *::after{transition:all .3s ease-in-out;}
+#mainav form *{transition:none !important;}
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+
+
+/* Navigation
+--------------------------------------------------------------------------------------------------------------- */
+nav ul, nav ol{margin:0; padding:0; list-style:none;}
+
+#mainav, #breadcrumb, .sidebar nav{line-height:normal;}
+#mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{position:absolute; font-family:"FontAwesome"; font-size:10px; line-height:10px;}
+
+/* Top Navigation */
+#mainav{}
+#mainav ul.clear{margin-top:3px;}
+#mainav ul{text-transform:uppercase;}
+#mainav ul ul{z-index:9999; position:absolute; width:180px; text-transform:none;}
+#mainav ul ul ul{left:180px; top:0;}
+#mainav li{display:inline-block; position:relative; margin:0 15px 0 0; padding:0;}
+#mainav li:last-child{margin-right:0;}
+#mainav li li{width:100%; margin:0;}
+#mainav li a{display:block; padding:30px 0;}
+#mainav li li a{border:solid; border-width:0 0 1px 0;}
+#mainav .drop{padding-left:15px;}
+#mainav li li a, #mainav li li .drop{display:block; margin:0; padding:10px 15px;}
+#mainav .drop::after, #mainav li li .drop::after{content:"\f0d7";}
+#mainav .drop::after{top:35px; left:5px;}
+#mainav li li .drop::after{top:15px; left:5px;}
+#mainav ul ul{visibility:hidden; opacity:0;}
+#mainav ul li:hover > ul{visibility:visible; opacity:1;}
+
+#mainav form{display:none; margin:0; padding:0;}
+#mainav form select, #mainav form select option{display:block; cursor:pointer; outline:none;}
+#mainav form select{width:100%; padding:5px; border:1px solid;}
+#mainav form select option{margin:5px; padding:0; border:none;}
+
+/* Breadcrumb */
+#breadcrumb{padding:20px 0; text-align:right;}
+#breadcrumb ul{margin:0; padding:0; list-style:none; text-transform:uppercase;}
+#breadcrumb li{display:inline-block; margin:0 6px 0 0; padding:0;}
+#breadcrumb li a{display:block; position:relative; margin:0; padding:0 12px 0 0; font-size:12px;}
+#breadcrumb li a::after{top:3px; right:0; content:"\f101";}
+#breadcrumb li:last-child a{margin:0; padding:0;}
+#breadcrumb li:last-child a::after{display:none;}
+
+/* Sidebar Navigation */
+.sidebar nav{display:block; width:100%;}
+.sidebar nav li{margin:0 0 3px 0; padding:0;}
+.sidebar nav a{display:block; position:relative; margin:0; padding:5px 10px 5px 15px; text-decoration:none; border:solid; border-width:0 0 1px 0;}
+.sidebar nav a::after{top:9px; left:5px; content:"\f101";}
+.sidebar nav ul ul a{padding-left:35px;}
+.sidebar nav ul ul a::after{left:25px;}
+.sidebar nav ul ul ul a{padding-left:55px;}
+.sidebar nav ul ul ul a::after{left:45px;}
+
+/* Pagination */
+.pagination{display:block; width:100%; text-align:center; clear:both;}
+.pagination li{display:inline-block; margin:0 2px 0 0;}
+.pagination li:last-child{margin-right:0;}
+.pagination a, .pagination strong{display:block; padding:8px 11px; border:1px solid; background-clip:padding-box; font-weight:normal;}
+
+/* Back to Top */
+#backtotop{z-index:999; display:inline-block; position:fixed; visibility:hidden; bottom:20px; right:20px; width:36px; height:36px; line-height:36px; font-size:16px; text-align:center; opacity:.2;}
+#backtotop i{display:block; width:100%; height:100%; line-height:inherit;}
+#backtotop.visible{visibility:visible; opacity:.5;}
+#backtotop:hover{opacity:1;}
+
+
+/* Tables
+--------------------------------------------------------------------------------------------------------------- */
+table, th, td{border:1px solid; border-collapse:collapse; vertical-align:top;}
+table, th{table-layout:auto;}
+table{width:100%; margin-bottom:15px;}
+th, td{padding:5px 8px;}
+td{border-width:0 1px;}
+
+
+/* Gallery
+--------------------------------------------------------------------------------------------------------------- */
+#gallery{display:block; width:100%; margin-bottom:50px;}
+#gallery figure figcaption{display:block; width:100%; clear:both;}
+#gallery li{margin-bottom:30px;}
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+
+
+/* Colours
+--------------------------------------------------------------------------------------------------------------- */
+body{color:#A6A6A6; background-color:#26272B;}
+a{color:#D3B48D;}
+a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
+hr, .borderedbox{border-color:#D7D7D7;}
+label span{color:#FF0000; background-color:inherit;}
+input:focus, textarea:focus, *:required:focus{border-color:#D3B48D;}
+.overlay{color:#FFFFFF; background-color:inherit;}
+.overlay::after{color:inherit; background-color:rgba(0,0,0,.55);}
+
+.btn, .btn.inverse:hover{color:BLACK; background-color:white; border-color:BLACK;}
+.btn:hover, .btn.inverse{color:WHITE; background-color:black; border-color:white;}
+
+
+/* Rows */
+.row0, .row0 a{}
+.row1, .row1 a{}
+.row2, .row2 a{}
+.row3{color:#797979; background-color:#FFFFFF;}
+.row4{color:#A6A6A6; background-color:#151517;}
+.row5, .row5 a{color:#A6A6A6; background-color:#26272B;}
+
+
+/* Page Intro */
+#pageintro{border-color:rgba(255,255,255,.2);}
+
+
+/* Header */
+#header #logo a{color:inherit;}
+
+
+/* Content Area */
+.services li figure{border-color:#D3B48D;}
+.services li figure figcaption{color:#FFFFFF; background-color:BLACK;}
+
+.testimonial blockquote{color:rgba(255,255,255,.5); background-color:rgba(0,0,0,.2); border-color:rgba(0,0,0,.5);}
+.testimonial:hover blockquote{color:#FFFFFF; background-color:#000000;}
+.testimonial blockquote::after{border-color:transparent; border-top-color:rgba(0,0,0,.5);}
+
+
+/* Footer */
+#footer .title, #footer .heading{color:#FFFFFF; border-color:#26272B;}
+
+
+/* Navigation */
+#mainav li a{color:inherit;}
+#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#D3B48D; background-color:inherit;}
+#mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(0,0,0,.6); border-color:rgba(0,0,0,.6);}
+#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#D3B48D;}
+#mainav form select{color:#FFFFFF; background-color:#26272B; border-color:rgba(255,255,255,.2);}
+
+#breadcrumb a{color:inherit; background-color:inherit;}
+#breadcrumb li:last-child a{color:#D3B48D;}
+
+.container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
+.container .sidebar nav a:hover{color:#D3B48D;}
+
+.pagination a, .pagination strong{border-color:#D7D7D7;}
+.pagination .current *{color:#FFFFFF; background-color:#D3B48D;}
+
+#backtotop{color:#FFFFFF; background-color:#D3B48D;}
+
+
+/* Tables + Comments */
+table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#D7D7D7;}
+#comments input:focus, #comments textarea:focus, #comments *:required:focus{border-color:#D3B48D;}
+th{color:#FFFFFF; background-color:#373737;}
+tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#FBFBFB;}
+tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
+table a, #comments a{background-color:inherit;}
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+
+
+/* Media Queries
+--------------------------------------------------------------------------------------------------------------- */
+@-ms-viewport{width:device-width;}
+
+
+/* Max Wrapper Width - Laptop, Desktop etc.
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width:978px){
+	.hoc{max-width:978px;}
+}
+
+
+/* Mobile Devices
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width:900px){
+	.hoc{max-width:90%;}
+
+	#header{padding:30px 0;}
+	#header #logo{margin:0;}
+
+	#mainav{}
+	#mainav ul{display:none;}
+	#mainav form{display:block;}
+
+	#breadcrumb{}
+
+	.container{}
+	#comments input[type="reset"]{margin-top:10px;}
+	.pagination li{display:inline-block; margin:0 5px 5px 0;}
+
+	#footer{}
+
+	#copyright{}
+	#copyright p:first-of-type{margin-bottom:10px;}
+}
+
+
+@media screen and (max-width:750px){
+	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
+	.fl_left, .fl_right{display:block; float:none;}
+	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
+
+	#header{text-align:center;}
+	#header #logo{margin-bottom:15px;}
+
+	.latest > article:first-child{margin-bottom:0;}
+}
+
+
+/* Other
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width:650px){
+	.scrollable{display:block; width:100%; margin:0 0 30px 0; padding:0 0 15px 0; overflow:auto; overflow-x:scroll;}
+	.scrollable table{margin:0; padding:0; white-space:nowrap;}
+
+	.inline li{display:block; margin-bottom:10px;}
+	.pushright li{margin-right:0;}
+
+	.font-x2{font-size:1.4rem;}
+	.font-x3{font-size:1.6rem;}
+
+	#breadcrumb{text-align:left;}
+}
